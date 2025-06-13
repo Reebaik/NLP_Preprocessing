@@ -4,7 +4,7 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 # Sample text
-text = "Torrential Rains innudate New York Citys,Brings Chaos to subways and streets"
+text = "Torrential Rains innudate New York Citys.Brings Chaos to subways and streets"
 
 # Process the text
 doc = nlp(text)

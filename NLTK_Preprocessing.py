@@ -10,7 +10,7 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 
 # Sample text
-text = "Torrential Rains innudate New York Citys,Brings Chaos to subways and streets"
+text = "Torrential Rains innudate New York Citys.Brings Chaos to subways and streets"
 
 # Tokenization
 tokens = word_tokenize(text)
