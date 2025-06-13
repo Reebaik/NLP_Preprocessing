@@ -9,15 +9,20 @@ text = "Torrential Rains innudate New York Citys.Brings Chaos to subways and str
 # Process the text
 doc = nlp(text)
 
-# Tokenization
+# Sentence Tokenization
+print("Sentence Tokenization:")
+for i, sent in enumerate(doc.sents, 1):
+    print(f"  {i}. {sent.text}")
+
+# Word Tokenization
 tokens = [token.text for token in doc]
-print("Tokens:", tokens)
+print("\nWord Tokens:", tokens)
 
 # Stop word removal
-filtered_tokens = [token for token in doc if not token.is_stop]
+filtered_tokens = [token for token in doc if not token.is_stop and token.is_alpha]
 print("After Stop Word Removal:", [token.text for token in filtered_tokens])
 
-# Lemmatization
+# Lemmatization (after stop word removal)
 lemmatized = [token.lemma_ for token in filtered_tokens]
 print("After Lemmatization:", lemmatized)
 

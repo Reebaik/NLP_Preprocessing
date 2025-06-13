@@ -12,9 +12,15 @@ nltk.download('omw-1.4')
 # Sample text
 text = "Torrential Rains innudate New York Citys.Brings Chaos to subways and streets"
 
-# Tokenization
+# Sentence Tokenization
+sentences = sent_tokenize(text)
+print("Sentence Tokenization:")
+for i, sent in enumerate(sentences, 1):
+    print(f"  {i}. {sent}")
+
+# Word Tokenization
 tokens = word_tokenize(text)
-print("Tokens:", tokens)
+print("\nWord Tokens:", tokens)
 
 # Stop word removal
 stop_words = set(stopwords.words('english'))
