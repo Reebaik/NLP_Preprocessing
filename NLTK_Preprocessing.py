@@ -1,5 +1,5 @@
 import nltk
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, sent_tokenize  # Added sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 
@@ -10,7 +10,7 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 
 # Sample text
-text = "Torrential Rains innudate New York Citys.Brings Chaos to subways and streets"
+text = "Torrential Rains innudate New York Citys. Brings Chaos to subways and streets."
 
 # Sentence Tokenization
 sentences = sent_tokenize(text)
