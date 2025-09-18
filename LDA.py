@@ -5,6 +5,12 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import os
 
+# 🔹 NLTK stopwords
+from nltk.corpus import stopwords
+import nltk
+nltk.download('stopwords')
+stop_words = set(stopwords.words("english"))
+
 # Example corpus
 documents = [
     "The cat sat on the mat",
@@ -15,8 +21,11 @@ documents = [
     "Machine learning and AI are future technologies"
 ]
 
-# Tokenize
-texts = [doc.lower().split() for doc in documents]
+# Tokenize + stopword removal
+texts = [
+    [word for word in doc.lower().split() if word not in stop_words]
+    for doc in documents
+]
 
 # Dictionary & Corpus
 dictionary = corpora.Dictionary(texts)
